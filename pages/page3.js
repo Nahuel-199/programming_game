@@ -5,7 +5,7 @@ import styles from "dev/styles/Page3.module.css";
 
 const Page3 = () => {
   const htmlContent = `
-    Una página HTML típica consta de una estructura básica que incluye elementos como &lt;!DOCTYPE html&gt;, &lt;html&gt;, &lt;head&gt;, &lt;title&gt;, y &lt;body&gt;. Estos elementos definen la relación entre el documento y el navegador, así como la información básica de la página.
+    Una página HTML típica consta de una estructura básica que incluye elementos como &lt;!DOCTYPE html&gt;, &lt;html&gt;, &lt;head&gt;, &lt;title&gt;, y &lt;body&gt;, pero la etiqueta principal para comenzar un archivo html es la etiqueta del propio nombre &lt;html&gt;. Estos elementos definen la relación entre el documento y el navegador, así como la información básica de la página.
     <br/>
     Ejemplo:
   `;
