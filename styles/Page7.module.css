@@ -204,7 +204,17 @@
   background-color: #f44336 !important; /* Color rojo para respuesta incorrecta */
 }
 
-/* ... Otros estilos ... */
+
+@keyframes confetti-fall {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100vh);
+  }
+}
+
+
 
   
   @media (max-width: 600px) {

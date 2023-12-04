@@ -25,7 +25,7 @@ const Page6 = () => {
           </p>
           <p className={styles.description_page6}>Ahora pongamos en practica lo que vimos recientemente</p>
         </div>
-        <Link href="/page7">
+        <Link href="/answers">
           <button className={styles.btn_index}>Siguiente</button>
         </Link>
       </div>
