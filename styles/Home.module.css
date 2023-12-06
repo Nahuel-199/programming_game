@@ -147,5 +147,16 @@
   .descriptionContainer{
     width: 90%;
   }
+.btn_index {
+  animation: flash 6s infinite;
+   }
 
+   @keyframes flash {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0.6;
+    }
+  }
 }

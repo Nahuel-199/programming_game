@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import styles from "dev/styles/Page7.module.css";
 import { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Router from 'next/router';
 import "react-toastify/dist/ReactToastify.css";
 import Confetti from "react-confetti";
 
@@ -17,7 +18,7 @@ const Answers = () => {
     },
     {
       id: 2,
-      question: "¿Qué significa HTML y cuál es su significado en inglés?",
+      question: "¿Qué significa HTML en inglés?",
       options: [
         "Hypertext Markup Language",
         "Hyper Transfer Markup Language",
@@ -147,11 +148,13 @@ const Answers = () => {
           });
         setCurrentQuestionIndex(incorrectQuestionIndexRef.current);
       } else {
-        toast.info(
-          "Has completado todas las preguntas. ¡Reiniciando el juego!", {
+        toast.success(
+          "Has completado todas las preguntas. ¡Te felicito!", {
             position: toast.POSITION.BOTTOM_CENTER
           });
-        setCurrentQuestionIndex(0);
+          setTimeout(() => {
+            Router.push('/finish'); // Ajusta la ruta según tu estructura de archivos
+          }, 3000); // Ajusta el tiempo en milisegundos según tus necesidades
       }
 
       resetGame();
@@ -213,9 +216,19 @@ const Answers = () => {
         <title>Preguntas y Respuestas</title>
       </Head>
       <div className={styles.container_page7}>
-         {confetti && <Confetti style={{
-            animation: 'confetti-fall 3s linear infinite',
-    }}/>}
+         {confetti && <Confetti  
+            recycle={false}
+            run={confetti}
+            numberOfPieces={400}
+            gravity={0.6}
+            initialVelocityY={-5}
+            initialVelocityX={2}
+            opacity={1}
+            onConfettiComplete={() => setConfetti(false)}
+            recycleDelay={3000}
+            wind={0.01}
+            windRandom={0.1}
+            rotate={false}/>}
         <span className={styles.counter}>7</span>
         <Link href="/page6">
           <AiOutlineArrowLeft className={styles.backArrow} />
@@ -256,7 +269,7 @@ const Answers = () => {
                   className={styles.btn_index}
                   onClick={handleRestartClick}
                 >
-                  Reiniciar Juego
+                  Volver a responder
                 </button>
               )}
             </div>

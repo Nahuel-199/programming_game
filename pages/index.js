@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Bienvenido a mi tutorial de programación
+          Bienvenido a mi introducción de programación
         </h1>
         <div className={styles.descriptionContainer}>
           <p className={styles.description}>
