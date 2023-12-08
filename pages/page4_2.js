@@ -1,12 +1,12 @@
-import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import styles from "dev/styles/Intro.module.css";
+import { motion, AnimatePresence } from "framer-motion";
+import styles from "dev/styles/page4_2.module.css";
 
-const Intro = () => {
+const page4_2 = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -21,6 +21,10 @@ const Intro = () => {
     };
   }, [router]);
 
+  const htmlContent = `
+  Utiliza &lt;p&gt; para crear párrafos y &lt;br&gt; para saltos de línea dentro de un párrafo.
+  `;
+
   return (
     <AnimatePresence>
       <motion.div
@@ -31,28 +35,33 @@ const Intro = () => {
         transition={{ duration: 1.0 }}
       >
         <Head>
-          <title>Introducción</title>
+          <title>Tipos de Elementos</title>
         </Head>
-        <div className={styles.container_intro}>
-          <span className={styles.counter}>1</span>
-          <Link href="/">
+        <div className={styles.container_page4_2}>
+          <span className={styles.counter}>4</span>
+          <Link href="/page4">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
-          <span className={styles.counter}>1</span>
-          <div className={styles.descriptionContainer_intro}>
-            <p className={styles.description_intro}>
-              Hablemos un poco de HTML, ¿Qué es HTML?
-            </p>
+          <span className={styles.counter}>4</span>
+          <div className={styles.descriptionContainer_page4_2}>
+            <p className={styles.description_page4_2}>Párrafos y Saltos de Línea:</p>
             <motion.p
-              className={styles.description_intro}
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+              className={styles.description_page4_2}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
+            ></motion.p>
+            <motion.p
+              className={styles.description_page4_2}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
             >
-              HTML (Hypertext Markup Language) es el lenguaje de marcado estándar utilizado para la creación y estructuración de contenido en la web. Permite a los desarrolladores web definir y organizar el contenido de una página, incluyendo texto, imágenes, enlaces, formularios y otros elementos multimedia. HTML es la columna vertebral de la mayoría de las páginas web y es esencial para cualquier desarrollador web.
+              <img src="/assets/parrafos.png" className={styles.img_page4_2} />
             </motion.p>
           </div>
-          <Link href="/page2">
+          <Link href="/page4_3">
             <button className={styles.btn_index}>Siguiente</button>
           </Link>
         </div>
@@ -61,4 +70,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default page4_2;

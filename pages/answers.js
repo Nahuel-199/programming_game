@@ -4,9 +4,11 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import styles from "dev/styles/Page7.module.css";
 import { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import Router from 'next/router';
+import Router from "next/router";
 import "react-toastify/dist/ReactToastify.css";
 import Confetti from "react-confetti";
+import { useRouter } from "next/router";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Answers = () => {
   const questions = [
@@ -37,50 +39,47 @@ const Answers = () => {
         "Proporcionar información adicional sobre la imagen.",
         "Indicar la fuente (URL) de la imagen.",
       ],
-      correctAnswer:
-        "Indicar la fuente (URL) de la imagen.",
+      correctAnswer: "Indicar la fuente (URL) de la imagen.",
     },
     {
-        id: 4,
-        question:
-          "¿Cómo se estructura una lista no ordenada en HTML?",
-        options: [
-          "<ul>, <li>",
-          "<ol>, <li>",
-          "<ul>, <ol>",
-          "<li>, <p>",
-        ],
-        correctAnswer:
-          "<ul>, <li>",
-      },
-      {
-        id: 5,
-        question:
-          "¿Qué elemento HTML se utiliza para crear un formulario?",
-        options: [
-          "<input>",
-          "<button>",
-          "<form>",
-          "<label>",
-        ],
-        correctAnswer:
-          "<form>",
-      },
-      {
-        id: 6,
-        question:
-          "¿Cuál es el propósito de la etiqueta <p> en HTML?",
-        options: [
-          "Mostrar una imagen",
-          "Crear un enlace",
-          "Definir un párrafo de texto",
-          "Enumerar una lista",
-        ],
-        correctAnswer:
-          "Definir un párrafo de texto",
-      },
+      id: 4,
+      question: "¿Cómo se estructura una lista no ordenada en HTML?",
+      options: ["<ul>, <li>", "<ol>, <li>", "<ul>, <ol>", "<li>, <p>"],
+      correctAnswer: "<ul>, <li>",
+    },
+    {
+      id: 5,
+      question: "¿Qué elemento HTML se utiliza para crear un formulario?",
+      options: ["<input>", "<button>", "<form>", "<label>"],
+      correctAnswer: "<form>",
+    },
+    {
+      id: 6,
+      question: "¿Cuál es el propósito de la etiqueta <p> en HTML?",
+      options: [
+        "Mostrar una imagen",
+        "Crear un enlace",
+        "Definir un párrafo de texto",
+        "Enumerar una lista",
+      ],
+      correctAnswer: "Definir un párrafo de texto",
+    },
     // Agrega más preguntas según sea necesario
   ];
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -111,11 +110,11 @@ const Answers = () => {
           answer === questions[currentQuestionIndex].correctAnswer
         ) {
           toast.success("¡Respuesta correcta!", {
-            position: toast.POSITION.BOTTOM_CENTER
+            position: toast.POSITION.BOTTOM_CENTER,
           });
         } else {
           toast.error("Respuesta incorrecta. ¡Inténtalo de nuevo!", {
-            position: toast.POSITION.BOTTOM_CENTER
+            position: toast.POSITION.BOTTOM_CENTER,
           });
           setDisableSelection(true);
           document.querySelectorAll(`.${styles.option}`).forEach((option) => {
@@ -143,18 +142,19 @@ const Answers = () => {
     } else {
       if (incorrectQuestionIndexRef.current !== null) {
         toast.info(
-          "Respuesta incorrecta. ¡Reiniciando desde la pregunta incorrecta!", {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
+          "Respuesta incorrecta. ¡Reiniciando desde la pregunta incorrecta!",
+          {
+            position: toast.POSITION.BOTTOM_CENTER,
+          }
+        );
         setCurrentQuestionIndex(incorrectQuestionIndexRef.current);
       } else {
-        toast.success(
-          "Has completado todas las preguntas. ¡Te felicito!", {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
-          setTimeout(() => {
-            Router.push('/finish'); // Ajusta la ruta según tu estructura de archivos
-          }, 3000); // Ajusta el tiempo en milisegundos según tus necesidades
+        toast.success("Has completado todas las preguntas. ¡Te felicito!", {
+          position: toast.POSITION.BOTTOM_CENTER,
+        });
+        setTimeout(() => {
+          Router.push("/finish"); // Ajusta la ruta según tu estructura de archivos
+        }, 3000); // Ajusta el tiempo en milisegundos según tus necesidades
       }
 
       resetGame();
@@ -168,7 +168,7 @@ const Answers = () => {
       incorrectQuestionIndexRef.current = null; // Resetea el índice de la pregunta incorrecta
     } else {
       toast.info("Has completado todas las preguntas. ¡Reiniciando el juego!", {
-        position: toast.POSITION.BOTTOM_CENTER
+        position: toast.POSITION.BOTTOM_CENTER,
       });
 
       setCurrentQuestionIndex(0);
@@ -205,79 +205,106 @@ const Answers = () => {
         setTimeout(() => {
           setConfetti(false);
         }, 3500); // Cambia el valor según tus preferencias
-      }, 1000); // Cambia el valor según tus preferencias
+      }, 1500); // Cambia el valor según tus preferencias
     }
   }, [selectedAnswer, currentQuestionIndex]);
 
-
   return (
-    <>
-      <Head>
-        <title>Preguntas y Respuestas</title>
-      </Head>
-      <div className={styles.container_page7}>
-         {confetti && <Confetti  
-            recycle={false}
-            run={confetti}
-            numberOfPieces={400}
-            gravity={0.6}
-            initialVelocityY={-5}
-            initialVelocityX={2}
-            opacity={1}
-            onConfettiComplete={() => setConfetti(false)}
-            recycleDelay={3000}
-            wind={0.01}
-            windRandom={0.1}
-            rotate={false}/>}
-        <span className={styles.counter}>7</span>
-        <Link href="/page6">
-          <AiOutlineArrowLeft className={styles.backArrow} />
-        </Link>
-        <span className={styles.counter}>7</span>
-        <div className={styles.descriptionContainer_page7}>
-          <p className={styles.description_page7}>
-            Pregunta {currentQuestionIndex + 1}:
-          </p>
-          {questions[currentQuestionIndex] && (
-            <p className={styles.description_page7}>
-              {questions[currentQuestionIndex].question}
-            </p>
+    <AnimatePresence>
+      <motion.div
+        key={router.route}
+        initial={{ opacity: 0, y: "100%" }}
+        animate={{ opacity: 1, y: "0%" }}
+        exit={{ opacity: 0, y: "100%" }}
+        transition={{ duration: 1.0 }}
+      >
+        <Head>
+          <title>Preguntas y Respuestas</title>
+        </Head>
+        <div className={styles.container_page7}>
+          {confetti && (
+            <Confetti
+              recycle={false}
+              run={confetti}
+              numberOfPieces={400}
+              gravity={0.6}
+              initialVelocityY={-5}
+              initialVelocityX={2}
+              opacity={1}
+              onConfettiComplete={() => setConfetti(false)}
+              recycleDelay={3000}
+              wind={0}
+              windRandom={0}
+              rotate={false}
+            />
           )}
-          <div className={styles.optionsContainer}>
-            {questions[currentQuestionIndex] &&
-              questions[currentQuestionIndex].options.map((option, index) => (
-                <div
-                  key={index}
-                  className={`${styles.option} ${
-                    selectedAnswer === option ? styles.selected : ""
-                  }`}
-                  onClick={() => handleAnswerClick(option)}
-                >
-                  {option}
-                </div>
-              ))}
-          </div>
-          {selectedAnswer && showButtonRef.current && (
-            <div>
-              {selectedAnswer ===
-              questions[currentQuestionIndex].correctAnswer ? (
-                <button className={styles.btn_index} onClick={handleNextClick}>
-                  Siguiente
-                </button>
-              ) : (
-                <button
-                  className={styles.btn_index}
-                  onClick={handleRestartClick}
-                >
-                  Volver a responder
-                </button>
-              )}
+          <span className={styles.counter}>7</span>
+          <Link href="/page6">
+            <AiOutlineArrowLeft className={styles.backArrow} />
+          </Link>
+          <span className={styles.counter}>7</span>
+          <div className={styles.descriptionContainer_page7}>
+            <motion.p
+              className={styles.description_page7}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+            >
+              Pregunta {currentQuestionIndex + 1}:
+            </motion.p>
+            {questions[currentQuestionIndex] && (
+              <motion.p
+                className={styles.description_page7}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                {questions[currentQuestionIndex].question}
+              </motion.p>
+            )}
+            <div className={styles.optionsContainer}>
+              {questions[currentQuestionIndex] &&
+                questions[currentQuestionIndex].options.map((option, index) => (
+                  <motion.div
+                    key={index}
+                    className={`${styles.option} ${
+                      selectedAnswer === option ? styles.selected : ""
+                    }`}
+                    onClick={() => handleAnswerClick(option)}
+                    initial={{ opacity: 0, x: "-100%" }}
+                    animate={{ opacity: 1, x: "0" }}
+                    exit={{ opacity: 0, x: "100%" }}
+                    transition={{ duration: 1.0, delay: 1.0 }}
+                  >
+                    {option}
+                  </motion.div>
+                ))}
             </div>
-          )}
+            {selectedAnswer && showButtonRef.current && (
+              <div>
+                {selectedAnswer ===
+                questions[currentQuestionIndex].correctAnswer ? (
+                  <button
+                    className={styles.btn_index}
+                    onClick={handleNextClick}
+                  >
+                    Siguiente
+                  </button>
+                ) : (
+                  <button
+                    className={styles.btn_index}
+                    onClick={handleRestartClick}
+                  >
+                    Volver a responder
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <ToastContainer />
-    </>
+        <ToastContainer />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

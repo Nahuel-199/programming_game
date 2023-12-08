@@ -4,9 +4,9 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import styles from "dev/styles/Page3.module.css";
+import styles from "dev/styles/page3_2.module.css";
 
-const Page3 = () => {
+const page3_2_2 = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -23,9 +23,14 @@ const Page3 = () => {
   }, [router]);
 
   const htmlContent = `
-  Toda página HTML sigue una estructura básica:
+  &lt;!DOCTYPE html&gt;: Define la versión de HTML que estás utilizando (en este caso, HTML5).<br/>
+    &lt;html&gt;: Elemento raíz que engloba todo el contenido de la página.<br/>
+    &lt;head&gt;: Contiene meta información sobre el documento, como el título, enlaces a hojas de estilo y scripts.<br/>
+    &lt;meta charset="UTF-8"&gt;: Especifica el conjunto de caracteres utilizado (UTF-8 para caracteres internacionales).<br/>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;: Ajusta la escala y el ancho en dispositivos móviles.<br/>
+    &lt;title&gt;: Define el título de la página que aparecerá en la pestaña del navegador.<br/>
+    &lt;body&gt;: Contiene el contenido visible de la página.
     <br/>
-    Ejemplo:
   `;
 
   return (
@@ -40,42 +45,24 @@ const Page3 = () => {
         <Head>
           <title>Estructura Básica</title>
         </Head>
-        <div className={styles.container_page3}>
+        <div className={styles.container_page3_2}>
           <span className={styles.counter}>3</span>
-          <Link href="/page2">
+          <Link href="/page3">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
           <span className={styles.counter}>3</span>
-          <div className={styles.descriptionContainer_page3}>
-            <p className={styles.description_page3}>Estructura Básica:</p>
+          <div className={styles.descriptionContainer_page3_2}>
+            <p className={styles.description_page3_2}>Estructura Básica (Etiquetas):</p>
             <motion.p
               dangerouslySetInnerHTML={{ __html: htmlContent }}
-              className={styles.description_page3}
+              className={styles.description_page3_2}
               initial={{ opacity: 0, x: "-100%" }}
               animate={{ opacity: 1, x: "0" }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 1.0, delay: 0.8 }}
             ></motion.p>
-            <motion.p
-              className={styles.description_page3}
-              initial={{ opacity: 0, x: "-100%" }}
-              animate={{ opacity: 1, x: "0" }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 1.0, delay: 0.8 }}
-            >
-              <img src="/assets/html.png" className={styles.img_page3} />
-            </motion.p>
-            <motion.p
-              className={styles.description_page3}
-              initial={{ opacity: 0, x: "-100%" }}
-              animate={{ opacity: 1, x: "0" }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 1.0, delay: 0.8 }}
-            >
-              A continuación explicaremos las etiquetas que vemos en este ejemplo
-            </motion.p>
           </div>
-          <Link href="/page3_2">
+          <Link href="/page4">
             <button className={styles.btn_index}>Siguiente</button>
           </Link>
         </div>
@@ -84,4 +71,4 @@ const Page3 = () => {
   );
 };
 
-export default Page3;
+export default page3_2_2;

@@ -6,6 +6,7 @@ body {
   transition: background-color 0.3s ease;
   background-color: #121212 !important;
   color: #ffffff;
+  overflow: hidden;
 }
 
 a {
