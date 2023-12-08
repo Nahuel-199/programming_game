@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "dev/styles/page5_2.module.css";
 
-const page5_2_2 = () => {
+const page5_2 = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -70,4 +70,4 @@ const page5_2_2 = () => {
   );
 };
 
-export default page5_2_2;
+export default page5_2;

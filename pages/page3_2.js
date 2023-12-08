@@ -4,9 +4,9 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import styles from "dev/styles/page3_2.module.css";
+import styles from "dev/styles/Page3_2.module.css"
 
-const page3_2_2 = () => {
+const page3_2 = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -71,4 +71,4 @@ const page3_2_2 = () => {
   );
 };
 
-export default page3_2_2;
+export default page3_2;
