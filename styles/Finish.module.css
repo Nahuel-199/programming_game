@@ -158,3 +158,24 @@
     }
   
   }
+
+  @media (max-width: 400px) {
+
+    .main {
+      overflow-y: scroll; /* Agregado para permitir el desplazamiento vertical en dispositivos móviles */
+    }
+
+    .descriptionContainer{
+      width: 90%;
+    }
+
+    .title{
+      font-size: 3rem;
+    }
+
+    .btn_index{
+      margin-bottom: 0px;
+      margin-top: 20px;
+    }
+  
+  }

@@ -179,3 +179,31 @@
       top: 25px;
     }
   }
+
+  @media (max-width: 400px) {
+
+    .descriptionContainer_page4_3{
+      margin-top: 120px;
+    }
+
+    .descriptionContainer_page4_3{
+      margin-top: -20px;
+    }
+
+    .backArrow {
+      left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
+    }
+    
+    .description_page4_3 {
+      font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
+      margin-top: 1vw; /* Ajusta según sea necesario para pantallas pequeñas */
+    }
+
+    .img_page4_3{
+      width: 100%;
+    }
+
+    .btn_index{
+      top: 25px;
+    }
+  }

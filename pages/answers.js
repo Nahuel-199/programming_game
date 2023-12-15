@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import styles from "dev/styles/Page7.module.css";
+import styles from "dev/styles/Ansers.module.css";
 import { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Router from "next/router";
