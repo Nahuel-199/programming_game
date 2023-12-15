@@ -18,6 +18,15 @@
   font-family: 'VT323', monospace;
 }
 
+.title2 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-align: center;
+  animation: bounce 2s infinite;
+  font-family: 'VT323', monospace;
+}
+
+
 .descriptionContainer {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -158,5 +167,29 @@
     25%, 75% {
       opacity: 0.6;
     }
+  }
+}
+
+@media(max-width: 350px) {
+  .main {
+    overflow-y: scroll;
+  }
+
+  .descriptionContainer {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-top: 50%;
+  }
+
+  .title2 {
+    font-size: 3rem;
+  }
+
+  .btn_index {
+    margin-bottom: 50px;
+    margin-top: 0px;
   }
 }

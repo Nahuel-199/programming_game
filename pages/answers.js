@@ -110,11 +110,11 @@ const Answers = () => {
           answer === questions[currentQuestionIndex].correctAnswer
         ) {
           toast.success("¡Respuesta correcta!", {
-            position: toast.POSITION.BOTTOM_CENTER,
+            position: toast.POSITION.TOP_CENTER,
           });
         } else {
           toast.error("Respuesta incorrecta. ¡Inténtalo de nuevo!", {
-            position: toast.POSITION.BOTTOM_CENTER,
+            position: toast.POSITION.TOP_CENTER,
           });
           setDisableSelection(true);
           document.querySelectorAll(`.${styles.option}`).forEach((option) => {
@@ -144,13 +144,13 @@ const Answers = () => {
         toast.info(
           "Respuesta incorrecta. ¡Reiniciando desde la pregunta incorrecta!",
           {
-            position: toast.POSITION.BOTTOM_CENTER,
+            position: toast.POSITION.TOP_CENTER,
           }
         );
         setCurrentQuestionIndex(incorrectQuestionIndexRef.current);
       } else {
         toast.success("Has completado todas las preguntas. ¡Te felicito!", {
-          position: toast.POSITION.BOTTOM_CENTER,
+          position: toast.POSITION.TOP_CENTER,
         });
         setTimeout(() => {
           Router.push("/finish"); // Ajusta la ruta según tu estructura de archivos
@@ -168,7 +168,7 @@ const Answers = () => {
       incorrectQuestionIndexRef.current = null; // Resetea el índice de la pregunta incorrecta
     } else {
       toast.info("Has completado todas las preguntas. ¡Reiniciando el juego!", {
-        position: toast.POSITION.BOTTOM_CENTER,
+        position: toast.POSITION.TOP_CENTER,
       });
 
       setCurrentQuestionIndex(0);

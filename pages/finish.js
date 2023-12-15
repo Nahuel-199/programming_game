@@ -63,7 +63,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Has llegado al final de esta introducción de HTML
         </h1>
-        <h1 className={styles.title}>
+        <h1 className={styles.title2}>
           ¡Te felicito!
         </h1>
         <div className={styles.descriptionContainer}>

@@ -1,70 +1,74 @@
 .container_page2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background: url("/assets/tetris4.jpeg") no-repeat center/cover;
-    background-size: cover;
-    overflow: hidden;
-  }
-  
-  .counter {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 50%;
-    padding: 6px 17px;
-    font-size: 1.2rem;
-  }
-  
-  .backArrow {
-      position: absolute;
-      top: 15px; /* Ajusta según sea necesario */
-      left: 50px; /* Ajusta según sea necesario */
-      font-size: 40px; /* Ajusta según sea necesario */
-      color: rgba(128, 128, 128, 0.5); /* Color gris transparente */
-      cursor: pointer; 
-      background: white;
-      border-radius: 50%;
-      padding: 0px 5px;
-    }
-  
-  .descriptionContainer_page2 {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 30px 25px;
-    backdrop-filter: blur(10px);
-    margin-top: 20px;
-    width: 90%;
-  }
-  
-  .description_page2 {
-    font-size: 1.2rem;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .btn_index,
-  .btn_index::after {
-   padding: 16px 20px;
-   font-size: 18px;
-   background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
-   border: 0;
-   color: #fff;
-   letter-spacing: 3px;
-   line-height: 1;
-   box-shadow: 6px 0px 0px #00e6f6;
-   outline: transparent;
-   position: relative;
-   top: 18px;
-   cursor: pointer;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: url("/assets/tetris4.jpeg") no-repeat center/cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px 17px;
+  font-size: 1.2rem;
+}
+
+.backArrow {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  font-size: 40px;
+  color: rgba(128, 128, 128, 0.5);
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  padding: 0px 5px;
+}
+
+.descriptionContainer_page2 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 25px;
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  width: 90%;
+}
+
+.description_page2 {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.img_page2 {
+  width: 50%; /* Ajustado para mejorar la legibilidad */
+}
+
+.btn_index,
+.btn_index::after {
+  padding: 16px 20px;
+  font-size: 18px;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  position: relative;
+  top: 18px;
+  cursor: pointer;
+}
   
   .btn_index::after {
    --slice-0: inset(50% 50% 50% 50%);
@@ -86,8 +90,8 @@
   }
   
   .btn_index:hover::after {
-   animation: 1s glitch;
-   animation-timing-function: steps(2, end);
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
   }
   
   @keyframes glitch {
@@ -148,60 +152,58 @@
   }
 
   @media (max-width: 600px) {
-
-    .descriptionContainer_page2{
+    .descriptionContainer_page2 {
       margin-top: 30px;
+      width: 90%; /* Ajustado para pantallas pequeñas */
     }
+  
     .backArrow {
-      left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
-      z-index: 100;
+      left: 15px;
     }
-
-    .counter{
+  
+    .counter {
       z-index: 999;
     }
-    
+  
     .description_page2 {
-      font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
-      margin-top: 1vw; /* Ajusta según sea necesario para pantallas pequeñas */
+      font-size: 1.1rem;
+      margin-top: 1vw;
     }
-
-    .img_page2{
+  
+    .img_page2 {
       width: 100%;
     }
-
-    .btn_index{
+  
+    .btn_index {
       margin-top: -30px;
     }
   }
   
   @media (max-width: 400px) {
-
-    .descriptionContainer_page2{
+    .descriptionContainer_page2 {
       margin-top: 70px;
       overflow-y: scroll;
     }
+  
     .backArrow {
-      left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
-      z-index: 100;
+      left: 15px;
     }
-
-    .counter{
+  
+    .counter {
       z-index: 999;
     }
-    
+  
     .description_page2 {
-      font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
-      margin-top: 1vw; /* Ajusta según sea necesario para pantallas pequeñas */
+      font-size: 1.1rem;
+      margin-top: 1vw;
     }
-
-    .img_page2{
+  
+    .img_page2 {
       width: 100%;
     }
-
-    .btn_index{
+  
+    .btn_index {
       margin-bottom: 40px;
       margin-top: 0px;
     }
   }
-  
