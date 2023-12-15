@@ -152,7 +152,12 @@
     margin-top: 0px;
   }
   .backArrow {
-    left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
+    left: 15px;
+    z-index: 999;
+  }
+
+  .counter{
+    z-index: 999;
   }
   
   .description_intro {

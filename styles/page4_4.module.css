@@ -161,6 +161,10 @@
     .backArrow {
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
     }
+
+    .descriptionContainer_page4_4{
+      margin-top: -110px;
+    }
     
     .description_page4_4 {
       font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
@@ -172,6 +176,6 @@
     }
 
     .btn_index{
-      top: -15px;
+      top: 15px;
     }
   }

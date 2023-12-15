@@ -150,11 +150,15 @@
   @media (max-width: 600px) {
 
     .descriptionContainer_page2{
-      margin-top: -60px;
+      margin-top: 30px;
     }
     .backArrow {
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
       z-index: 100;
+    }
+
+    .counter{
+      z-index: 999;
     }
     
     .description_page2 {
@@ -164,6 +168,10 @@
 
     .img_page2{
       width: 100%;
+    }
+
+    .btn_index{
+      margin-top: -30px;
     }
   }
   

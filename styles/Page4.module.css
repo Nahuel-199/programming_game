@@ -157,6 +157,10 @@
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
     }
     
+    .descriptionContainer_page4{
+      margin-top: -100px;
+    }
+
     .description_page4 {
       font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
       margin-top: 1vw; /* Ajusta según sea necesario para pantallas pequeñas */

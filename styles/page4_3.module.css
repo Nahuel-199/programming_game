@@ -158,6 +158,10 @@
       margin-top: 70px;
     }
 
+    .descriptionContainer_page4_3{
+      margin-top: -20px;
+    }
+
     .backArrow {
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
     }
@@ -172,6 +176,6 @@
     }
 
     .btn_index{
-      top: -15px;
+      top: 25px;
     }
   }

@@ -34,11 +34,11 @@ const Page6 = () => {
           <title>Deducción</title>
         </Head>
         <div className={styles.container_page6}>
-          <span className={styles.counter}>6</span>
+          <span className={styles.counter}>11</span>
           <Link href="/page5_2">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
-          <span className={styles.counter}>6</span>
+          <span className={styles.counter}>11</span>
           <div className={styles.descriptionContainer_page6}>
             <p className={styles.description_page6}>Sintesis:</p>
             <motion.p

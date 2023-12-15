@@ -156,6 +156,10 @@
     .backArrow {
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
     }
+
+    .descriptionContainer_page5_2{
+      margin-top: -80px;
+    }
     
     .description_page5_2 {
       font-size: 1.1rem; /* Ajusta según sea necesario para pantallas pequeñas */
@@ -164,6 +168,10 @@
 
     .img_page5_2{
       width: 100%;
+    }
+
+    .btn_index{
+      top: 15px;
     }
   }
   

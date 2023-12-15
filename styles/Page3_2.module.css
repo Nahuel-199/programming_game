@@ -153,13 +153,21 @@
   }
   
   @media (max-width: 600px) {
+    .container_page3_2 {
+      overflow-y: scroll; /* Agregado para permitir el desplazamiento vertical en dispositivos móviles */
+    }
 
     .descriptionContainer_page3_2{
-      margin-top: 70px;
+      margin-top: 300px;
     }
 
     .backArrow {
       left: 15px; /* Ajusta según sea necesario para pantallas pequeñas */
+      z-index: 100;
+    }
+
+    .counter{
+      z-index: 999;
     }
     
     .description_page3_2 {
@@ -172,6 +180,7 @@
     }
 
     .btn_index{
-      top: -15px;
+      margin-bottom: 40px;
+      margin-top: 0px;
     }
   }

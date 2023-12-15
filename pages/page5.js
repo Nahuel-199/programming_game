@@ -38,11 +38,11 @@ const Page5 = () => {
           <title>Atributos</title>
         </Head>
         <div className={styles.container_page5}>
-          <span className={styles.counter}>5</span>
+          <span className={styles.counter}>9</span>
           <Link href="/page4_4">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
-          <span className={styles.counter}>5</span>
+          <span className={styles.counter}>9</span>
           <div className={styles.descriptionContainer_page5}>
             <p className={styles.description_page5}>Imagenes:</p>
             <motion.p

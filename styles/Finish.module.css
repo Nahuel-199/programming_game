@@ -144,8 +144,17 @@
   }
   
   @media (max-width: 600px) {
+
+    .main {
+      overflow-y: scroll; /* Agregado para permitir el desplazamiento vertical en dispositivos móviles */
+    }
+
     .descriptionContainer{
       width: 90%;
+    }
+
+    .title{
+      font-size: 3rem;
     }
   
   }

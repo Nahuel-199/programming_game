@@ -238,11 +238,11 @@ const Answers = () => {
               rotate={false}
             />
           )}
-          <span className={styles.counter}>7</span>
+          <span className={styles.counter}>12</span>
           <Link href="/page6">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
-          <span className={styles.counter}>7</span>
+          <span className={styles.counter}>12</span>
           <div className={styles.descriptionContainer_page7}>
             <motion.p
               className={styles.description_page7}

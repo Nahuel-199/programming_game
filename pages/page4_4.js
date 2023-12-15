@@ -38,11 +38,11 @@ const page4_4 = () => {
           <title>Tipos de Elementos</title>
         </Head>
         <div className={styles.container_page4_4}>
-          <span className={styles.counter}>4</span>
+          <span className={styles.counter}>8</span>
           <Link href="/page4_3">
             <AiOutlineArrowLeft className={styles.backArrow} />
           </Link>
-          <span className={styles.counter}>4</span>
+          <span className={styles.counter}>8</span>
           <div className={styles.descriptionContainer_page4_4}>
             <p className={styles.description_page4_4}>Enlaces:</p>
             <motion.p
